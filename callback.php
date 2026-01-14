@@ -121,6 +121,7 @@ if ($request_body['sender_type'] == 'bot') {
 
 $group_id = $request_body['group_id'];
 $filter_file = 'filters/' . $group_id;
+if (!file_exists($filter_file)) { touch($filter_file); }
 
 $message = $request_body['text'];
 
